@@ -4,6 +4,8 @@ import ch.hesge.algo.model.Exceptions.NotWorkingException;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Comparator;
+import java.util.Objects;
 import java.util.Optional;
 
 public class Employee {
@@ -62,13 +64,26 @@ public class Employee {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(firstName, employee.firstName) &&
+                Objects.equals(lastName, employee.lastName) &&
+                Objects.equals(birthdate, employee.birthdate) &&
+                department == employee.department;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, birthdate, department);
+    }
+
+    @Override
     public String toString() {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ",company=" + company.getName() + '\'' +
                 ", birthdate=" + birthdate +
-                ", department=" + department +
                 '}';
     }
 }

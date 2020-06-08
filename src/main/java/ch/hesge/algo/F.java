@@ -2,9 +2,7 @@ package ch.hesge.algo;
 
 import ch.hesge.algo.model.Employee;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class F {
 
@@ -17,7 +15,9 @@ public class F {
      * @return Liste d'Employee triés par birthdate ascendante
      */
     public List<Employee> sortByBirthdate (Collection<Employee> employees) {
-        List<Employee> sorted = new ArrayList<>();
+        List<Employee> sorted = new ArrayList<>(employees);
+        Comparator<Employee> c = Comparator.comparing(Employee::getBirthdate);
+        sorted.sort(c);
         return sorted;
     }
 }

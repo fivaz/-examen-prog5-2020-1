@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Company {
+public final class Company
+//        implements Comparable<Company>
+{
 
     private final String name;
     private final List<Employee> employees = new ArrayList<>();
@@ -18,7 +20,7 @@ public class Company {
     }
 
     public List<Employee> getEmployees() {
-        return employees;
+        return new ArrayList<>(employees);
     }
 
     public String getName() {
@@ -59,7 +61,16 @@ public class Company {
     public String toString() {
         return "Company{" +
                 "name='" + name + '\'' +
-                ", employees=" + employees +
+                ", employees=" + employees.size() +
                 '}';
     }
+
+
+
+//    @Override
+//    public int compareTo(Company o) {
+//
+//                o.getEmployees().size()
+////    this.getEmployees().size();
+//    }
 }

@@ -1,6 +1,7 @@
 package ch.hesge.algo;
 
 import ch.hesge.algo.model.Company;
+import ch.hesge.algo.model.Department;
 import ch.hesge.algo.model.Employee;
 
 import java.util.Set;
@@ -15,5 +16,11 @@ public class K {
      * @param employees Collection d'Employee
      */
     public void hireUnemployedEmployees(Company company, Set<Employee> employees) {
+        employees.stream().forEach(employee -> {
+            if(!employee.getCompany().isPresent()){
+                company.hire(employee, Department.ENGINEERING);
+            }
+        });
+        System.out.println(company);
     }
 }

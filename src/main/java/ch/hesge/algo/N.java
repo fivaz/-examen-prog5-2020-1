@@ -1,5 +1,7 @@
 package ch.hesge.algo;
 
+import ch.hesge.algo.model.Coin;
+
 import java.util.stream.IntStream;
 
 public class N {
@@ -12,7 +14,6 @@ public class N {
      * @return Stream infini de 0 et de 1
      */
     public IntStream randomStream() {
-        IntStream stream = null;
-        return stream;
+        return IntStream.generate(() -> new Coin().flip() == Coin.Flip.HEAD ? 1 : 0);
     }
 }
