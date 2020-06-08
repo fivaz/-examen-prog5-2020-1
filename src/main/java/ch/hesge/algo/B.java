@@ -3,6 +3,7 @@ package ch.hesge.algo;
 import ch.hesge.algo.model.Company;
 import ch.hesge.algo.model.Employee;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 public class B {
@@ -17,10 +18,15 @@ public class B {
      */
     public Employee findOldestEmployee(Set<Company> companies) {
         Employee employee = null;
+        LocalDate now = LocalDate.now();
         int biggestAge = 0;
         for (Company thisCompany : companies)
-            if (thisCompany.getEmployees().size() > biggestSize)
-                company = thisCompany;
+            for (Employee thisEmployee : thisCompany.getEmployees()) {
+                if (thisEmployee.getAge(now) > biggestAge) {
+                    employee = thisEmployee;
+                    biggestAge = thisEmployee.getAge(now);
+                }
+            }
         return employee;
     }
 }

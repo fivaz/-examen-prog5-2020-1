@@ -60,4 +60,15 @@ public class Employee {
         company = null;
         department = null;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ",company=" + company.getName() + '\'' +
+                ", birthdate=" + birthdate +
+                ", department=" + department +
+                '}';
+    }
 }

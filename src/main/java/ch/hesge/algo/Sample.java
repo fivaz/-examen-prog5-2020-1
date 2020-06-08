@@ -32,12 +32,33 @@ public class Sample {
     }
 
     public static void main(String[] args) {
-        Set<Company> companies = new HashSet<>();
-        companies.add(FOO);
-        companies.add(BAR);
-        companies.add(BAZ);
+//        Set<Company> companies = new HashSet<>();
+//        companies.add(FOO);
+//        companies.add(BAR);
+//        companies.add(BAZ);
 
-        A a = new A();
-        System.out.println(a.findCompanyWithHighestNumberOfEmployees(companies));
+        Set<Employee> employes = new HashSet<>();
+        employes.add(JOHN);
+        employes.add(JOHN_BIS);
+        employes.add(JANE);
+        employes.add(JOHN2);
+        employes.add(ERIC);
+        employes.add(SARAH);
+        employes.add(BOB);
+        employes.add(BILL);
+
+//        A a = new A();
+//        System.out.println(a.findCompanyWithHighestNumberOfEmployees(companies));
+
+//        B b = new B();
+//        System.out.println(b.findOldestEmployee(companies));
+
+        C c = new C();
+        Company company = new Company("Company qui recrute");
+        c.hireUnemployedEmployees(company, employes);
+        System.out.println(company);
+        for(Employee empl: company.getEmployees()){
+            System.out.println(empl);
+        }
     }
 }
