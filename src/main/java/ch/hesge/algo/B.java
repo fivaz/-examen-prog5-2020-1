@@ -4,6 +4,9 @@ import ch.hesge.algo.model.Company;
 import ch.hesge.algo.model.Employee;
 
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Set;
 
 public class B {
@@ -17,16 +20,18 @@ public class B {
      * @return Employee le plus âgé
      */
     public Employee findOldestEmployee(Set<Company> companies) {
-        Employee employee = null;
         LocalDate now = LocalDate.now();
-        int biggestAge = 0;
-        for (Company thisCompany : companies)
-            for (Employee thisEmployee : thisCompany.getEmployees()) {
-                if (thisEmployee.getAge(now) > biggestAge) {
-                    employee = thisEmployee;
-                    biggestAge = thisEmployee.getAge(now);
-                }
+
+        HashSet hashSet = new HashSet<Employee>();
+        for(Company company: companies){
+            hashSet.addAll(company.getEmployees());
+        }
+
+        return Collections.max(hashSet, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return Integer.compare(o1.getAge(now), o2.getAge(now));
             }
-        return employee;
+        });
     }
 }

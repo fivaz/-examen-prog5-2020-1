@@ -51,17 +51,17 @@ public class Sample {
 
         B b = new B();
         System.out.println(b.findOldestEmployee(companies));
-
-        C c = new C();
-        Company company = new Company("Company qui recrute");
-        c.hireUnemployedEmployees(company, employes);
-        System.out.println(company);
-
-        D d = new D();
-        Map<Department, Set<Employee>> departmentSetMap = d.groupByDepartment(companies);
-        for (Map.Entry<Department, Set<Employee>> entry : departmentSetMap.entrySet())
-            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-        System.out.println(departmentSetMap);
+//
+//        C c = new C();
+//        Company company = new Company("Company qui recrute");
+//        c.hireUnemployedEmployees(company, employes);
+//        System.out.println(company);
+//
+//        D d = new D();
+//        Map<Department, Set<Employee>> departmentSetMap = d.groupByDepartment(companies);
+//        for (Map.Entry<Department, Set<Employee>> entry : departmentSetMap.entrySet())
+//            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+//        System.out.println(departmentSetMap);
 
         /*
         Executer ce méthode avec les autres em bas commentés vu qu'il va modifier les anciennes employes
@@ -70,28 +70,28 @@ public class Sample {
         System.out.println(merge.getEmployees().size());
         */
 
-        F f = new F();
-        List<Employee> employees = f.sortByBirthdate(employes);
-        System.out.println(employees);
-
-        H h = new H();
-        h.manageUnicityOfEmployees();
-
-        I i = new I();
-        Company companyWithHighestNumberOfEmployees = i.findCompanyWithHighestNumberOfEmployees(companies);
-        System.out.println(companyWithHighestNumberOfEmployees);
-
-        J j = new J();
-        Employee oldestEmployee = j.findOldestEmployee(companies);
-        System.out.println(oldestEmployee);
-
-        K k = new K();
-        k.hireUnemployedEmployees(new Company("companie qui recrute 2"), employes);
-
-        L l = new L();
-        l.merge(Arrays.asList("A", "B", "C"));
-
-        M m = new M();
-        m.sortByBirthdate(employes);
+//        F f = new F();
+//        List<Employee> employees = f.sortByBirthdate(employes);
+//        System.out.println(employees);
+//
+//        H h = new H();
+//        h.manageUnicityOfEmployees();
+//
+//        I i = new I();
+//        Company companyWithHighestNumberOfEmployees = i.findCompanyWithHighestNumberOfEmployees(companies);
+//        System.out.println(companyWithHighestNumberOfEmployees);
+//
+//        J j = new J();
+//        Employee oldestEmployee = j.findOldestEmployee(companies);
+//        System.out.println(oldestEmployee);
+//
+//        K k = new K();
+//        k.hireUnemployedEmployees(new Company("companie qui recrute 2"), employes);
+//
+//        L l = new L();
+//        l.merge(Arrays.asList("A", "B", "C"));
+//
+//        M m = new M();
+//        m.sortByBirthdate(employes);
     }
 }
