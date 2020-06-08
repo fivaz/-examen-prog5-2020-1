@@ -59,7 +59,7 @@ public class Company {
     public String toString() {
         return "Company{" +
                 "name='" + name + '\'' +
-                ", employees.size=" + employees.size() +
+                ", employees=" + employees +
                 '}';
     }
 }

@@ -6,11 +6,12 @@ import ch.hesge.algo.model.Employee;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Sample {
 
-    public static final Employee JOHN = new Employee("John", "Doe", LocalDate.of(1970, 1, 1));
+    public static final Employee JOHN = new Employee("John", "Doe1", LocalDate.of(1970, 1, 1));
     public static final Employee JOHN_BIS = new Employee("John", "Doe", LocalDate.of(1970, 1, 1));
     public static final Employee JANE = new Employee("Jane", "Doe", LocalDate.of(1971, 1, 1));
     public static final Employee JOHN2 = new Employee("John", "Doe", LocalDate.of(1980, 1, 1));
@@ -32,20 +33,20 @@ public class Sample {
     }
 
     public static void main(String[] args) {
-//        Set<Company> companies = new HashSet<>();
-//        companies.add(FOO);
-//        companies.add(BAR);
-//        companies.add(BAZ);
+        Set<Company> companies = new HashSet<>();
+        companies.add(FOO);
+        companies.add(BAR);
+        companies.add(BAZ);
 
-        Set<Employee> employes = new HashSet<>();
-        employes.add(JOHN);
-        employes.add(JOHN_BIS);
-        employes.add(JANE);
-        employes.add(JOHN2);
-        employes.add(ERIC);
-        employes.add(SARAH);
-        employes.add(BOB);
-        employes.add(BILL);
+//        Set<Employee> employes = new HashSet<>();
+//        employes.add(JOHN);
+//        employes.add(JOHN_BIS);
+//        employes.add(JANE);
+//        employes.add(JOHN2);
+//        employes.add(ERIC);
+//        employes.add(SARAH);
+//        employes.add(BOB);
+//        employes.add(BILL);
 
 //        A a = new A();
 //        System.out.println(a.findCompanyWithHighestNumberOfEmployees(companies));
@@ -53,12 +54,20 @@ public class Sample {
 //        B b = new B();
 //        System.out.println(b.findOldestEmployee(companies));
 
-        C c = new C();
-        Company company = new Company("Company qui recrute");
-        c.hireUnemployedEmployees(company, employes);
-        System.out.println(company);
-        for(Employee empl: company.getEmployees()){
-            System.out.println(empl);
-        }
+//        C c = new C();
+//        Company company = new Company("Company qui recrute");
+//        c.hireUnemployedEmployees(company, employes);
+//        System.out.println(company);
+
+//        D d = new D();
+//        Map<Department, Set<Employee>> departmentSetMap = d.groupByDepartment(companies);
+//        for (Map.Entry<Department, Set<Employee>> entry : departmentSetMap.entrySet())
+//            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+//
+//        System.out.println(departmentSetMap);
+
+        E e = new E();
+        Company merge = e.merge(companies);
+        System.out.println(merge);
     }
 }
